@@ -1,6 +1,6 @@
 from operacoesbd import *
 
-conexao = abrirBancoDados('localhost', 'root', 'helloworld', 'ouvidoria1')
+conexao = abrirBancoDados('localhost', 'user', 'password', 'ouvidoria')
 
 opcao = 1
 
