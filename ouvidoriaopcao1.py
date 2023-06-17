@@ -1,7 +1,3 @@
-'''
-Nome dos integrantes: Carlos Daniel de Lima Souza, Gabriel Leite Oliveira Da Silva, 
-Hugo Yan Capozzoli Costa e João Victor Pinheiro Rodrigues.
-'''
 from operacoesbd import *
 
 conexao = abrirBancoDados('localhost', 'root', 'helloworld', 'ouvidoria1')
