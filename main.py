@@ -1,4 +1,4 @@
-from operacoesbd import *
+from classe import *
 
 conexao = abrirBancoDados('localhost', 'root', 'root', 'ouvidoria')
 
