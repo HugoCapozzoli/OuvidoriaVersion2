@@ -65,8 +65,19 @@ while opcao != 8:
                 print('Voltar')
             else:
                 print('Opção inválida!')
-            elif opcao == 8:
-                print('Sair')
+    elif opcao == 5:
+        codigo = input('Digite o código da manifestação que deseja exibir: ')
+        consulta = 'select * from manifestacao where codigo = ' + codigo
+        pesquisa = listarBancoDados(conexao, consulta)
+
+        if len(pesquisa) == 0:
+            print('Manifestação não encontrada!')
+        else:
+            for i in pesquisa:
+                print('Código', i[0], '-', i[1], '-', i[4],
+                      '-', i[3], '-', 'Descrição:', i[2], '-', 'Data:', i[5], '/', i[6], '/', i[7])
+    elif opcao == 8:
+        print('Sair')
         
-            else:
-        print('Opção inválida!')
+        else:
+            print('Opção inválida!')
