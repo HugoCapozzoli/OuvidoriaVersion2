@@ -133,5 +133,5 @@ while opcao != 8:
     elif opcao == 8:
         print('Sair')
         
-        else:
-            print('Opção inválida!')
+    else:
+        print('Opção inválida!')
