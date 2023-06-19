@@ -65,3 +65,8 @@ while opcao != 8:
                 print('Voltar')
             else:
                 print('Opção inválida!')
+            elif opcao == 8:
+                print('Sair')
+        
+            else:
+        print('Opção inválida!')
