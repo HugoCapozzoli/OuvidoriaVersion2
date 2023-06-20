@@ -67,51 +67,51 @@ while opcao != 8:
                 print('Opção inválida!')
 
     elif opcao == 3:
-classe = int(input('Qual manifestação deseja criar?'
+        classe = int(input('Qual manifestação deseja criar?'
                    '\n1)Elogio \n2)Reclamação \n3)Sugestão \n4)Voltar\nDigite: '))
-if classe == 1:
-    tipo = 'Elogio'
+        if classe == 1:
+            tipo = 'Elogio'
 
-elif classe == 2:
-    tipo = 'Reclamação'
+        elif classe == 2:
+            tipo = 'Reclamação'
 
-elif classe == 3:
-    tipo = 'Sugestão'
+        elif classe == 3:
+            tipo = 'Sugestão'
 
-else:
-    tipo = 'Outros'
+        else:
+            tipo = 'Outros'
 
-autor = input('Digite seu nome: ')
-titulo = input('Dê um título para o seu elogio: ')
-descricao = input('Descreva o seu elogio: ')
-dia = str(input('Digite o dia em que o fato ocorreu: '))
-mes = str(input('Digite o mês em que o fato ocorreu: '))
-ano = str(input('Digite o ano em que o fato ocorreu: '))
-sqlInsercao = 'insert into manifestacao (titulo,descricao,autor,tipo,dia,mes,ano) values(%s,%s,%s,%s,%s,%s,%s)'
-valores = [titulo, descricao, autor, tipo, dia, mes, ano]
-insertNoBancoDados(conexao, sqlInsercao, valores)
-print('Manifestação cadastrada com sucesso!')
+        autor = input('Digite seu nome: ')
+        titulo = input('Dê um título para o seu elogio: ')
+        descricao = input('Descreva o seu elogio: ')
+        dia = str(input('Digite o dia em que o fato ocorreu: '))
+        mes = str(input('Digite o mês em que o fato ocorreu: '))
+        ano = str(input('Digite o ano em que o fato ocorreu: '))
+        sqlInsercao = 'insert into manifestacao (titulo,descricao,autor,tipo,dia,mes,ano) values(%s,%s,%s,%s,%s,%s,%s)'
+        valores = [titulo, descricao, autor, tipo, dia, mes, ano]
+        insertNoBancoDados(conexao, sqlInsercao, valores)
+        print('Manifestação cadastrada com sucesso!')
 
-elif opcao == 4:
-consulta = 'select count(*) from manifestacao'
-manifestacao = listarBancoDados(conexao, consulta)
-quantidade = manifestacao[0][0]
-print('Quantidade de manifestações:', quantidade)
+    elif opcao == 4:
+        consulta = 'select count(*) from manifestacao'
+        manifestacao = listarBancoDados(conexao, consulta)
+        quantidade = manifestacao[0][0]
+        print('Quantidade de manifestações:', quantidade)
 
-elogio = 'select count(*) from manifestacao where tipo = "Elogio"'
-manifestacao = listarBancoDados(conexao, elogio)
-quantidade = manifestacao[0][0]
-print('Quantidade de Elogios:', quantidade)
+        elogio = 'select count(*) from manifestacao where tipo = "Elogio"'
+        manifestacao = listarBancoDados(conexao, elogio)
+        quantidade = manifestacao[0][0]
+        print('Quantidade de Elogios:', quantidade)
 
-reclamacao = 'select count(*) from manifestacao where tipo = "Reclamação"'
-manifestacao = listarBancoDados(conexao, reclamacao)
-quantidade = manifestacao[0][0]
-print('Quantidade de Reclamações', quantidade)
+        reclamacao = 'select count(*) from manifestacao where tipo = "Reclamação"'
+        manifestacao = listarBancoDados(conexao, reclamacao)
+        quantidade = manifestacao[0][0]
+        print('Quantidade de Reclamações', quantidade)
 
-sugestao = 'select count(*) from manifestacao where tipo = "Sugestão"'
-manifestacao = listarBancoDados(conexao, sugestao)
-quantidade = manifestacao[0][0]
-print('Quantidade de Sugestões', quantidade)
+        sugestao = 'select count(*) from manifestacao where tipo = "Sugestão"'
+        manifestacao = listarBancoDados(conexao, sugestao)
+        quantidade = manifestacao[0][0]
+        print('Quantidade de Sugestões', quantidade)
     
     elif opcao == 5:
         codigo = input('Digite o código da manifestação que deseja exibir: ')
