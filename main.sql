@@ -9,4 +9,3 @@ CREATE TABLE manifestacao (
     ano VARCHAR(100),
     PRIMARY KEY (codigo)
 );
-select * from manifestacao;
